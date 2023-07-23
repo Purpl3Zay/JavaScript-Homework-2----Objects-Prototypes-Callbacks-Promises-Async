@@ -18,20 +18,9 @@ let person3 = {
     }]
 }
 
-function displayFavoriteFoods(foodlist) {
-    for (let food in foodlist) {
-      if (Array.isArray(foodlist[food])) {
-        console.log(`${food}: ${foodlist[food].join(", ")}`);
-      } else if (typeof foodlist[food] === "object") {
-        console.log(`${food}:`);
-        displayFavoriteFoods(foodlist[food][0]);
-      } else {
-        console.log(`${food}: ${foodlist[food]}`);
-      }
-    }
+for(let i = 0; i < Object.keys(person3).length; i++){
+  console.log(Object.keys(person3)[i])
 }
-
-console.log(displayFavoriteFoods(person3))
 
 //=======Exercise #2=========//
 /*
