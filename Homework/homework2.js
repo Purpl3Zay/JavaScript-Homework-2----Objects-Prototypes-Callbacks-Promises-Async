@@ -38,26 +38,26 @@ function Person(name, age) {
     Person.age = age;
 
     // Use an arrow to create the printInfo method
-    Person.prototype.printInfo = function() {
-        console.log(`Name: ${Person.name}, Age: ${Person.age}`);
+    Person.prototype.printInfo = () => {
+        console.log(`Name: ${name}, Age: ${Person.age}`);
     };
 
     // Create another arrow function for the addAge method that takes a single parameter
-    Person.prototype.incrementAge = () => {
+    Person.prototype.addAge = () => {
         Person.age += 1;
     };
 }
 
 const person1 = new Person("Brandon", 67); // I assume you are this age
-const person2 = new Person("Schadre", 26); 
-
 console.log(Person.prototype.printInfo(person1));
-console.log(Person.prototype.printInfo(person2));
 // Adding to the age
-person1.incrementAge();
-person1.incrementAge();
-person1.incrementAge();
+person1.addAge();
+person1.addAge();
+person1.addAge();
 console.log(Person.prototype.printInfo(person1));
+
+const person2 = new Person("Schadre", 24); 
+console.log(Person.prototype.printInfo(person2));
 
 // =============Exercise #3 ============//
 /*
