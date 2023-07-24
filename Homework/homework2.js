@@ -67,15 +67,29 @@ console.log(Person.prototype.printInfo(person2));
     If the length of the string is less than 10 console log "Small Number"
 */
 
-function checkStringLength(str) {
-    return new Promise(() => {
+const checkStringLength = (str) => {
+    return new Promise((resolve, result) => {
       if (str.length > 9) {
-        console.log("Big word");
+        resolve(true);
       }
     else {
-        console.log("Small Number");
+        result(false);
       }
     });
 }
+
 checkStringLength("bumfuzzled")
+.then( (result) => {
+  console.log("Big word")
+})
+.catch( (error) => {
+  console.log("Small Number")
+})
+
 checkStringLength("hello")
+.then( (result) => {
+  console.log("Big word")
+})
+.catch( (error) => {
+  console.log("Small Number")
+})
